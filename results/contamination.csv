@@ -1,0 +1,7 @@
+task,model,mean_continuation_overlap,share_overlap_ge_0.8,masked_acc_test,masked_acc_valid,gap_test_minus_valid
+smsa,qwen,0.01,0.0,0.705,0.56,0.145
+smsa,llama,0.0124,0.0,0.685,0.625,0.06
+smsa,gemma,0.0228,0.0,0.735,0.65,0.085
+emot,qwen,0.0051,0.0,0.615,0.555,0.06
+emot,llama,0.005,0.0,0.59,0.51,0.08
+emot,gemma,0.0106,0.0,0.655,0.61,0.045

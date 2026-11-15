@@ -1,0 +1,110 @@
+{
+ "homo-qwen": {
+  "seeds": [
+   11
+  ],
+  "unanimous": 0.998,
+  "n": 500,
+  "vote_fixed": 1,
+  "vote_broken": 0,
+  "vote_changed": 1,
+  "judge_fixed": 0,
+  "judge_broken": 0,
+  "judge_changed": 0,
+  "disagreements": 1,
+  "gold_in_disagreements": {
+   "neutral": 1
+  },
+  "agents": {
+   "qwen:r0_right": 1,
+   "qwen:last_right": 3,
+   "qwen:right_to_wrong": 0,
+   "qwen:wrong_to_right": 2
+  }
+ },
+ "homo-llama": {
+  "seeds": [
+   11,
+   22,
+   33
+  ],
+  "unanimous": 0.95,
+  "n": 1500,
+  "vote_fixed": 3,
+  "vote_broken": 11,
+  "vote_changed": 15,
+  "judge_fixed": 3,
+  "judge_broken": 18,
+  "judge_changed": 23,
+  "disagreements": 75,
+  "gold_in_disagreements": {
+   "negative": 11,
+   "positive": 15,
+   "neutral": 49
+  },
+  "agents": {
+   "llama:r0_right": 112,
+   "llama:last_right": 99,
+   "llama:right_to_wrong": 31,
+   "llama:wrong_to_right": 18
+  }
+ },
+ "homo-gemma": {
+  "seeds": [
+   11
+  ],
+  "unanimous": 0.998,
+  "n": 500,
+  "vote_fixed": 0,
+  "vote_broken": 0,
+  "vote_changed": 0,
+  "judge_fixed": 0,
+  "judge_broken": 0,
+  "judge_changed": 0,
+  "disagreements": 1,
+  "gold_in_disagreements": {
+   "negative": 1
+  },
+  "agents": {
+   "gemma:r0_right": 2,
+   "gemma:last_right": 3,
+   "gemma:right_to_wrong": 0,
+   "gemma:wrong_to_right": 1
+  }
+ },
+ "hetero": {
+  "seeds": [
+   11,
+   22,
+   33
+  ],
+  "unanimous": 0.9,
+  "n": 1500,
+  "vote_fixed": 13,
+  "vote_broken": 26,
+  "vote_changed": 42,
+  "judge_fixed": 11,
+  "judge_broken": 33,
+  "judge_changed": 47,
+  "disagreements": 150,
+  "gold_in_disagreements": {
+   "negative": 22,
+   "positive": 32,
+   "neutral": 96
+  },
+  "agents": {
+   "qwen:r0_right": 87,
+   "qwen:last_right": 80,
+   "qwen:right_to_wrong": 18,
+   "qwen:wrong_to_right": 11,
+   "llama:r0_right": 39,
+   "llama:last_right": 58,
+   "llama:right_to_wrong": 8,
+   "llama:wrong_to_right": 27,
+   "gemma:r0_right": 105,
+   "gemma:last_right": 72,
+   "gemma:right_to_wrong": 64,
+   "gemma:wrong_to_right": 31
+  }
+ }
+}

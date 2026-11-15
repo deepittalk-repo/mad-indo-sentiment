@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software or the processed data, please cite it as below."
+title: "Multi-Agent Debate for Indonesian Sentiment and Emotion Classification: Accuracy, Hard Cases, and Cost (Code, Data Splits, and Notebooks)"
+version: 1.0.0
+date-released: 2026-11-15
+license: MIT
+repository-code: "https://github.com/deepittalk-repo/mad-indo-sentiment"
+authors:
+  - name: "Anonymous (under double-blind review)"
+keywords: [multi-agent debate, large language models, sentiment analysis, emotion classification, Indonesian]

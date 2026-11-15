@@ -1,0 +1,119 @@
+{
+ "homo-qwen": {
+  "seeds": [
+   11
+  ],
+  "unanimous": 0.9863636363636363,
+  "n": 440,
+  "vote_fixed": 0,
+  "vote_broken": 0,
+  "vote_changed": 0,
+  "judge_fixed": 0,
+  "judge_broken": 0,
+  "judge_changed": 0,
+  "disagreements": 6,
+  "gold_in_disagreements": {
+   "anger": 3,
+   "sadness": 1,
+   "love": 1,
+   "happy": 1
+  },
+  "agents": {
+   "qwen:r0_right": 7,
+   "qwen:last_right": 6,
+   "qwen:right_to_wrong": 3,
+   "qwen:wrong_to_right": 2
+  }
+ },
+ "homo-llama": {
+  "seeds": [
+   11,
+   22,
+   33
+  ],
+  "unanimous": 0.6757575757575758,
+  "n": 1320,
+  "vote_fixed": 70,
+  "vote_broken": 9,
+  "vote_changed": 105,
+  "judge_fixed": 72,
+  "judge_broken": 11,
+  "judge_changed": 114,
+  "disagreements": 428,
+  "gold_in_disagreements": {
+   "happy": 135,
+   "anger": 143,
+   "sadness": 79,
+   "fear": 36,
+   "love": 35
+  },
+  "agents": {
+   "llama:r0_right": 492,
+   "llama:last_right": 713,
+   "llama:right_to_wrong": 61,
+   "llama:wrong_to_right": 282
+  }
+ },
+ "homo-gemma": {
+  "seeds": [
+   11
+  ],
+  "unanimous": 0.9863636363636363,
+  "n": 440,
+  "vote_fixed": 0,
+  "vote_broken": 0,
+  "vote_changed": 0,
+  "judge_fixed": 0,
+  "judge_broken": 0,
+  "judge_changed": 0,
+  "disagreements": 6,
+  "gold_in_disagreements": {
+   "sadness": 3,
+   "anger": 2,
+   "happy": 1
+  },
+  "agents": {
+   "gemma:r0_right": 7,
+   "gemma:last_right": 8,
+   "gemma:right_to_wrong": 1,
+   "gemma:wrong_to_right": 2
+  }
+ },
+ "hetero": {
+  "seeds": [
+   11,
+   22,
+   33
+  ],
+  "unanimous": 0.5606060606060606,
+  "n": 1320,
+  "vote_fixed": 51,
+  "vote_broken": 37,
+  "vote_changed": 97,
+  "judge_fixed": 47,
+  "judge_broken": 31,
+  "judge_changed": 88,
+  "disagreements": 580,
+  "gold_in_disagreements": {
+   "love": 63,
+   "fear": 82,
+   "happy": 166,
+   "sadness": 104,
+   "anger": 165
+  },
+  "agents": {
+   "qwen:r0_right": 312,
+   "qwen:last_right": 382,
+   "qwen:right_to_wrong": 50,
+   "qwen:wrong_to_right": 120,
+   "llama:r0_right": 169,
+   "llama:last_right": 356,
+   "llama:right_to_wrong": 25,
+   "llama:wrong_to_right": 212,
+   "gemma:r0_right": 390,
+   "gemma:last_right": 403,
+   "gemma:right_to_wrong": 59,
+   "gemma:wrong_to_right": 72
+  }
+ }
+}

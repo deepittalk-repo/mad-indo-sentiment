@@ -1,0 +1,78 @@
+# Central configuration for all experiments.
+# Every notebook reads this file, so a change here applies everywhere.
+
+tasks:
+  smsa:
+    labels: [positive, neutral, negative]
+    hard_class: neutral          # H1
+  emot:
+    labels: [sadness, anger, love, fear, happy]
+    hard_class: fear             # H2
+
+# Set to an integer (e.g. 50) for a quick pilot run; null = full test set.
+limit_test_samples: null
+
+baselines:
+  tfidf:
+    C_grid: [0.1, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0]
+  frozen_embeddings:
+    model: LazarusNLP/all-indobert-base-v4
+    C_grid: [0.01, 0.02, 0.05, 0.1, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0]
+  indobert:
+    model: indobenchmark/indobert-base-p1
+    learning_rate: 2.0e-5
+    batch_size: 16
+    max_epochs: 5
+    max_length: 128
+    reported_seeds: [13, 21, 42, 87, 100]
+    h3_seeds: [7, 77, 777]       # used only to define H3 (never reported)
+
+llm:
+  backend: ollama
+  host: http://localhost:11434
+  # One model per family of comparable size (Ollama tags, 4-bit by default).
+  models:
+    qwen: qwen2.5:7b
+    llama: llama3.1:8b
+    gemma: gemma2:9b
+  judge_model: mistral:7b        # family not used by any debater
+  num_ctx: 2048
+  max_rationale_tokens: 100
+  num_predict: 256               # hard cap on generated tokens per call
+  parallel_requests: 4           # requests sent to Ollama at once (OLLAMA_NUM_PARALLEL)
+
+single_agent:
+  settings: [S1_zero_shot, S2_few_shot, S3_cot]
+  temperature: 0.0
+  n_paraphrases: 3
+  few_shot_per_class: 2
+  seeds: [11, 22, 33]            # S2 redraws its examples per seed
+  # Prompt-sensitivity analysis on one model only (compute budget); other models use paraphrase 0.
+  paraphrase_models: [qwen]
+
+debate:
+  n_agents: 3
+  max_rounds: 2                  # revision rounds after round 0
+  temperature: 0.7
+  # Round 0 prompt. S2_few_shot = same few-shot prompt and example set as single-agent S2
+  # for the same seed (strongest single-agent setting); S1_zero_shot = zero-shot.
+  round0_setting: S2_few_shot
+  chunk_size: 100                # samples per phase; each model is loaded once per phase
+  seeds: [11]                    # first pass: every composition, one seed
+  extra_seeds: [22, 33]          # second pass: only for compositions listed below
+  extra_seed_compositions: [hetero, homo-llama]   # robustness check of the effects found in the first pass
+  compositions:
+    homogeneous: [qwen, llama, gemma]   # each run uses 3 instances of one family
+    heterogeneous: [qwen, llama, gemma] # one agent per family
+
+audit:
+  sample_per_condition: 100
+
+evaluation:
+  alpha: 0.05
+  n_bootstrap: 1000
+  bootstrap_seed: 2026
+
+contamination:
+  n_samples: 200
+  n_mask_terms: 200              # top discriminative terms masked in perturbation test
