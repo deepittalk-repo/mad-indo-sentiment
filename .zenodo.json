@@ -1,0 +1,13 @@
+{
+  "title": "Multi-Agent Debate for Indonesian Sentiment and Emotion Classification: Accuracy, Hard Cases, and Cost (Code, Data Splits, and Notebooks)",
+  "description": "Reproducibility package: code, IndoNLU SmSA and EmoT splits, configuration, executed Colab notebooks, and all predictions for comparing supervised baselines, single-agent LLM prompting, and multi-agent debate on Indonesian sentiment and emotion classification.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "version": "1.0.0",
+  "creators": [{"name": "Deep IT Talk"}],
+  "keywords": ["multi-agent debate", "large language models", "sentiment analysis", "emotion classification", "Indonesian", "IndoNLU"],
+  "related_identifiers": [
+    {"identifier": "10.18653/v1/2020.aacl-main.85", "relation": "references", "scheme": "doi"}
+  ]
+}
